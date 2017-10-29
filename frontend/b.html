@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            var a = window.location.href.split("=")[1];
+            $.ajax({
+                url:"http://localhost:3000/item/datail",
+                type:"POST",
+                data:{
+                    id:a
+                },
+                success:function (e) {
+                    console.log(e)
+                    for(var i=0;i<e.length;i++){
+                        $("body").append("<h2>" + e[i].detail + "</h2>")
+                    }
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!--WINDOW.LOCATION.HREF-->
+<!--$.ajax({-->
+<!--URL:-->
+<!--DATA:{ID:1-->
+</body>
+</html>
